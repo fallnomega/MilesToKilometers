@@ -51,56 +51,73 @@
 
 
 import tkinter
-
-def change_text():
-    my_label['text'] = input.get()
-
-def button_clicked():
-    print("I got clicked!")
+#
+# def change_text():
+#     my_label['text'] = input.get()
+#
+# def button_clicked():
+#     print("I got clicked!")
+#
+# window = tkinter.Tk()
+# window.title("My first GUI program")
+# window.minsize(width=500,height=300)
+#
+# # Labels
+#
+# my_label = tkinter.Label(text= "I am a Label",font=("Arial",24,"bold","italic","underline"))
+# #show on screen and where in the window
+# # my_label.pack() #auto centers it on screen if () left blank
+# # my_label.pack(side="left") # put on left side of screen
+# # my_label.pack(expand=True) #take up the screen
+# # my_label.pack()
+#
+# # Place is positioning it on x,y layout
+# # my_label.place(x=200,y=200)
+#
+# # Grid, another way of locating a label to somewhere on the window.
+# # Guess think of it like a spreadsheet or 2d array and moving around that way
+#
+# #NOTe you cant mix grid and pack, errors arise from it.
+#
+# my_label.grid(column=0,row=1)
+#
+# #change label text
+# my_label['text'] = "My new text"
+# # or
+# my_label.config(text="My new new text")
+#
+#
+#
+# #Buttons
+# # button = tkinter.Button(text="Click Me",command=button_clicked)
+# button = tkinter.Button(text="Click Me",command=change_text)
+# # button.pack()
+# button.grid(row=2,column=1)
+# #Entry
+# input = tkinter.Entry(width=10)
+# # input.pack()
+# input.grid(row=3,column=2)
+#
+#
+# #pack packs widgets together and on top of one another. side parameter will adjust it to where it packs (left,right, etc)
+# #keep window running instead of auto exit when script run.
+#
+# # needs to be at end of program
 
 window = tkinter.Tk()
-window.title("My first GUI program")
 window.minsize(width=500,height=300)
+#padding around window
+window.config(padx=100,pady=200)
 
-# Labels
+label = tkinter.Label(text="New Text",font=("Arial",24,"bold","italic","underline"))
+label.grid(row=0,column=0)
 
-my_label = tkinter.Label(text= "I am a Label",font=("Arial",24,"bold","italic","underline"))
-#show on screen and where in the window
-# my_label.pack() #auto centers it on screen if () left blank
-# my_label.pack(side="left") # put on left side of screen
-# my_label.pack(expand=True) #take up the screen
-# my_label.pack()
-
-# Place is positioning it on x,y layout
-# my_label.place(x=200,y=200)
-
-# Grid, another way of locating a label to somewhere on the window.
-# Guess think of it like a spreadsheet or 2d array and moving around that way
-
-#NOTe you cant mix grid and pack, errors arise from it.
-
-my_label.grid(column=0,row=1)
-
-#change label text
-my_label['text'] = "My new text"
-# or
-my_label.config(text="My new new text")
+new_button = tkinter.Button(text="New Button")
+new_button.grid(row=0,column=2)
+button = tkinter.Button(text="Button")
+button.grid(row=1,column=1)
+entry = tkinter.Entry()
+entry.grid(row=2,column=3)
 
 
-
-#Buttons
-# button = tkinter.Button(text="Click Me",command=button_clicked)
-button = tkinter.Button(text="Click Me",command=change_text)
-# button.pack()
-button.grid(row=2,column=1)
-#Entry
-input = tkinter.Entry(width=10)
-# input.pack()
-input.grid(row=3,column=2)
-
-
-#pack packs widgets together and on top of one another. side parameter will adjust it to where it packs (left,right, etc)
-#keep window running instead of auto exit when script run.
-
-# needs to be at end of program
 window.mainloop()
