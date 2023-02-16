@@ -1,16 +1,19 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import tkinter
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def calc_mile_kilo():
+    miles = number.get()
+    miles = float(miles)
+    result = miles * 1.609
+    label['text'] = f"Kilometers = {result}"
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+window = tkinter.Tk()
+label = tkinter.Label(text="I will convert miles to kilometers. Provide a number below to calculate it to Kilometer")
+button = tkinter.Button(text="Calculate", command=calc_mile_kilo)
+number = tkinter.Entry()
+label.pack()
+button.pack()
+number.pack()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+window.mainloop()
