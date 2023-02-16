@@ -7,7 +7,6 @@ def calc_mile_kilo():
     result = miles * 1.609
     label['text'] = f"Kilometers = {result}"
 
-
 window = tkinter.Tk()
 label = tkinter.Label(text="I will convert miles to kilometers. Provide a number below to calculate it to Kilometer")
 button = tkinter.Button(text="Calculate", command=calc_mile_kilo)
